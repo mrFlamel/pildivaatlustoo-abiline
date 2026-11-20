@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KU1 Pildivaatlustöö</title>
+<link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>KU1 Kordamine Lepiste pildivaatlustööks</h1>
+  <section> <img id="pildi_koht" src="pildi_koht.png" alt='Laen...'> </section>
+
+  <h2 id="küsimus">Laen küsimust...</h2>
+  <header>
+    <form id="vastusewrapper" onsubmit="event.preventDefault(); enter()" autocomplete="off">
+      <input type="text" id="vastus" name="fname" placeholder="Sisesta *õige* vastus...">
+    </form></header>
+</div>
+
+<script>
+  document.getElementById("vastus").focus();
+  start();
+</script>
+
+</body>
+</html>

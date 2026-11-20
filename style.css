@@ -1,0 +1,71 @@
+/**************************************
+ * STATIC LAYOUT CSS
+ **************************************/
+
+.wrapper {
+    width: 80%;
+    min-width: 300px;
+    margin: auto;
+}
+
+section {
+    height: 60vh;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+#vastus {
+    width: 90%;
+    max-width: 500px;
+    height: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+
+/**************************************
+ * CSS TO MAKE THE EXAMPLE LOOK PRETTY
+ **************************************/
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    /*background: #2980b9;*/
+    background: #405B6B;
+    color: #FFF;
+    font-family: Helvetica;
+    text-align: center;
+    margin: 0;
+}
+
+header,
+nav,
+section {
+    border: 1px solid rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+header {
+    padding: 20px 0;
+}
