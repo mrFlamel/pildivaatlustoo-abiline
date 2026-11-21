@@ -59,7 +59,7 @@ küsimused = ['. küsimus: Mis on selle teose pealkiri?',
              '. küsimus: Kuidas nimetatakse selle teose autorit/autoreid?',
              '. küsimus: Millises stiilis on antud teos?']
 var küsimuste_count = 0;
-var õigete_count = 0;
+var valede_count= 0;
 var valik_nr = 0;
 var valik = []
 
@@ -82,7 +82,7 @@ var disallow_enter = false;
 var eelmineValeVastus = "";
 function enter() {
     if (disallow_enter){return;}
-
+    
     const answer = document.getElementById("vastus").value;
     if (answer==""){return;}
     if (answer==eelmineValeVastus){return;}
@@ -105,7 +105,6 @@ function enter() {
     }
 
     if (õige_vale){
-        õigete_count += 1;
         eelmineValeVastus = "";
 
         document.getElementById("küsimus").style = "color: #55d52b"
@@ -131,7 +130,8 @@ function enter() {
 
                 if (vastused.length == 0){
                     document.getElementById("küsimus").style = "color: white"
-                    document.getElementById("küsimus").innerText = "Tehtud! Sinu skoor on " + õigete_count.toString() + "/" + küsimuste_count.toString() + " ehk " + (õigete_count*100/küsimuste_count).toFixed(1).toString() + "%."
+                    document.getElementById("küsimus").innerText = "Tehtud! Sinu skoor on " + (küsimuste_count-valede_count).toString() + "/" + küsimuste_count.toString() + " ehk " + ((küsimuste_count-valede_count)*100/küsimuste_count).toFixed(1).toString() + "%."
+                    disallow_enter = true;
                     return;
                 }
 
@@ -148,7 +148,7 @@ function enter() {
 
     } else {
         eelmineValeVastus = new String(answer);
-        küsimuste_count += 1;
+        valede_count += 1;
         document.getElementById("küsimus").style = "color: #ff4d4d"
         document.getElementById("küsimus").innerText = 'x Vale vastus! Õige vastus on ' + õige_vastus;
     }
